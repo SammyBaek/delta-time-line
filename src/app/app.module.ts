@@ -6,8 +6,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 
 import { RouterModule } from '@angular/router';
 import { GroundToAirportComponent } from './ground-to-airport/ground-to-airport.component';
-import {ParkingInfoComponent} from './parking-info/parking-info.component';
-import {CheckInComponent} from './check-in/check-in.component';
+import { ParkingInfoComponent} from './parking-info/parking-info.component';
+import { CheckInComponent} from './check-in/check-in.component';
 import { TsalineComponent } from './tsaline/tsaline.component';
 import { FreeTimeComponent } from './free-time/free-time.component';
 import { OnPlaneComponent } from './on-plane/on-plane.component';
@@ -27,7 +27,9 @@ import { BoardingComponent } from './boarding/boarding.component';
     OnPlaneComponent,
     BaggageClaimComponent,
     AirportToGroundComponent,
-    BoardingComponent
+    BoardingComponent,
+    ParkingInfoComponent,
+    CheckInComponent
   ],
   imports: [
     BrowserModule,
