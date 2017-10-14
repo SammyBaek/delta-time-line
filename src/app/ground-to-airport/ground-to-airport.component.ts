@@ -12,19 +12,31 @@ export class GroundToAirportComponent implements OnInit {
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(this.showMap);
-    document.write(this.appService.getUser().getName());
   }
   showMap(position) {
+    const directionsService = new google.maps.DirectionsService();
+
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const uluru = {lat: latitude, lng: longitude};
-    const map = new google.maps.Map(document.getElementById('map'), {
+    // const uluru = {lat: latitude, lng: longitude};
+    // const end = {lat: 33.640411, lng: -84.419853};
+    const start = new google.maps.LatLng(latitude, longitude);
+    const end = new google.maps.LatLng(33.640411, -84.419853);
+    const directionsDisplay = new google.maps.DirectionsRenderer();
+    let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      center: uluru
+      center: start
     });
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map
+    directionsDisplay.setMap(map);
+    const request = {
+      origin: start,
+      destination: end,
+      travelMode: 'DRIVING'
+    };
+    directionsService.route(request, function(result, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(result);
+      }
     });
   }
 
