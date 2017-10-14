@@ -68,7 +68,7 @@ import { BoardingComponent } from './boarding/boarding.component';
       },
       {
         path: '',
-        redirectTo: '/signIn',
+        redirectTo: '/groundToAirport',
         pathMatch: 'full'
       },
     ])

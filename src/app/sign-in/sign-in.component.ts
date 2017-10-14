@@ -14,7 +14,8 @@ export class SignInComponent implements OnInit {
   }
 
   signIn(user, pass) {
-    this.router.navigateByUrl('/groundToAirport');
+    console.log('Hello');
+    this.router.navigate(['/groundToAirport']);
     if (user === 'bob' && pass === 'hack') {
       user = 'lol';
     }
