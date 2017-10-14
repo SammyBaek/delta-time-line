@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +11,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent implements OnInit {
 
   myForm: FormGroup;
-  constructor(private router: Router) { }
+  name: string;
+  constructor(private router: Router, private appService: AppService) { }
 
   ngOnInit() {
     this.myForm = new FormGroup({
@@ -24,17 +26,9 @@ export class SignInComponent implements OnInit {
   onSubmit() {
     const user = this.myForm.value.user;
     const pw = this.myForm.value.password;
-    if (user === 'gt' && pw === 'hack') {
+    if (pw === 'hack' && (user === 'Jane' || user === 'Bob')) {
+      this.appService.setUser(user);
       this.router.navigate(['/groundToAirport']);
     }
   }
-
-  signIn(user, pass) {
-    console.log('Hello');
-    this.router.navigate(['/groundToAirport']);
-    if (user === 'bob' && pass === 'hack') {
-      user = 'lol';
-    }
-  }
-
 }

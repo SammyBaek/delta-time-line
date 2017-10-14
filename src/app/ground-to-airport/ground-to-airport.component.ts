@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "../app.service";
 declare var google: any;
 
 @Component({
@@ -7,10 +8,11 @@ declare var google: any;
   styleUrls: ['./ground-to-airport.component.css']
 })
 export class GroundToAirportComponent implements OnInit {
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(this.showMap);
+    document.write(this.appService.getUser().getName());
   }
   showMap(position) {
     const latitude = position.coords.latitude;
