@@ -6,8 +6,8 @@ import { User } from './User';
 )
 export class AppService {
   users = [
-    new User('Bob'),
-    new User('Jane')
+    // new User('Bob'),
+    // new User('Jane')
   ];
   private user;
   constructor() {
