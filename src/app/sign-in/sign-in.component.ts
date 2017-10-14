@@ -12,4 +12,10 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
 
+  signIN(user, pass) {
+    if (user === 'bob' && pass === 'hack'){
+
+    }
+  }
+
 }
