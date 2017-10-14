@@ -65,7 +65,12 @@ import { BoardingComponent } from './boarding/boarding.component';
       {
         path: 'airportToGround',
         component: AirportToGroundComponent
-      }
+      },
+      {
+        path: '',
+        redirectTo: '/signIn',
+        pathMatch: 'full'
+      },
     ])
   ],
   providers: [],
