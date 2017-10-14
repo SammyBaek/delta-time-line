@@ -17,7 +17,7 @@ export class GroundToAirportComponent implements OnInit {
     const longitude = position.coords.longitude;
     const uluru = {lat: latitude, lng: longitude};
     const map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
+      zoom: 10,
       center: uluru
     });
     const marker = new google.maps.Marker({
