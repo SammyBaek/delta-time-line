@@ -14,7 +14,7 @@ export class SignInComponent implements OnInit {
 
   signIN(user, pass) {
     if (user === 'bob' && pass === 'hack'){
-
+      user = 'lol';
     }
   }
 
