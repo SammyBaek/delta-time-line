@@ -1,6 +1,22 @@
-<input type="text" placeholder="username" name="user">
-<input type="password" placeholder="password" name="pass">
-<input type="submit" value="Submit" (click)="signIn(user,pass)">
+<div class="jumbotron">
+  <h1>Login!</h1>
+</div>
+<div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="user">username</label>
+      <input type="text" class="form-control" id="user" formControlName="user">
+    </div>
 
-<button routerLink="/groundToAirport">ground to airport</button>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="text" class="form-control" id="password" formControlName="password">
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+</div>
 

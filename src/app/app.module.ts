@@ -15,6 +15,8 @@ import { BaggageClaimComponent } from './baggage-claim/baggage-claim.component';
 import { AirportToGroundComponent } from './airport-to-ground/airport-to-ground.component';
 import { BoardingComponent } from './boarding/boarding.component';
 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { BoardingComponent } from './boarding/boarding.component';
     CheckInComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     RouterModule.forRoot([
       {
@@ -68,7 +72,7 @@ import { BoardingComponent } from './boarding/boarding.component';
       },
       {
         path: '',
-        redirectTo: '/groundToAirport',
+        redirectTo: '/signIn',
         pathMatch: 'full'
       },
     ])
