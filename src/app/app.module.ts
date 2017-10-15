@@ -16,7 +16,8 @@ import { AirportToGroundComponent } from './airport-to-ground/airport-to-ground.
 import { BoardingComponent } from './boarding/boarding.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AppService} from './Services/user.service';
+import {UserService} from './Services/user.service';
+import {HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [{
     path: 'signIn',
@@ -68,7 +69,8 @@ const appRoutes: Routes = [{
     AirportToGroundComponent,
     BoardingComponent,
     ParkingInfoComponent,
-    CheckInComponent
+    CheckInComponent,
+    HttpClientModule,
   ],
   imports: [
     ReactiveFormsModule,
@@ -76,7 +78,7 @@ const appRoutes: Routes = [{
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

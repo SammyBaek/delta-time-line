@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AppService } from '../Services/user.service';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +12,7 @@ export class SignInComponent implements OnInit {
 
   myForm: FormGroup;
   name: string;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, private appService: UserService) { }
 
   ngOnInit() {
     this.myForm = new FormGroup({

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { User } from './User';
+import {Airport} from "./Airport";
 
 @Injectable(
 
 )
-export class AppService {
+export class UserService {
   users = [
     // new User('Bob'),
     // new User('Jane')

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AppService} from "../Services/user.service";
+import {UserService} from '../Services/user.service';
+import {HttpClient} from "@angular/common/http";
 declare var google: any;
 
 @Component({
@@ -8,8 +9,8 @@ declare var google: any;
   styleUrls: ['./ground-to-airport.component.css']
 })
 export class GroundToAirportComponent implements OnInit {
-  constructor(private appService: AppService) { }
-
+  constructor(private appService: UserService,) { }
+  results: string[];
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(this.showMap);
   }
@@ -38,6 +39,10 @@ export class GroundToAirportComponent implements OnInit {
         directionsDisplay.setDirections(result);
       }
     });
+    // this.http.get('/api/items').subscribe(data => {
+    //   // Read the result field from the JSON response.
+    //   this.results = data['results'];
+    // });
   }
 
 }
