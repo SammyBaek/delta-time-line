@@ -14,10 +14,10 @@ import { OnPlaneComponent } from './on-plane/on-plane.component';
 import { BaggageClaimComponent } from './baggage-claim/baggage-claim.component';
 import { AirportToGroundComponent } from './airport-to-ground/airport-to-ground.component';
 import { BoardingComponent } from './boarding/boarding.component';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {UserService} from './Services/user.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PreviewComponent } from './preview/preview.component';
 
 const appRoutes: Routes = [{
     path: 'signIn',
@@ -70,7 +70,7 @@ const appRoutes: Routes = [{
     BoardingComponent,
     ParkingInfoComponent,
     CheckInComponent,
-    HttpClientModule,
+    PreviewComponent,
   ],
   imports: [
     ReactiveFormsModule,
