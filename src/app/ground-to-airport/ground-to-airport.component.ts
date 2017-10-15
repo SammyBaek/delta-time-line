@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../Services/user.service';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import 'rxjs/Rx';
+import {Observable} from "rxjs/Observable"
 declare var google: any;
 
 @Component({
   selector: 'app-ground-to-airport',
   templateUrl: './ground-to-airport.component.html',
-  styleUrls: ['./ground-to-airport.component.css']
+  styleUrls: ['./ground-to-airport.component.css'],
+  providers: [HttpClient, HttpClientModule]
 })
 export class GroundToAirportComponent implements OnInit {
-  constructor(private appService: UserService,) { }
+  constructor(private http: HttpClient) { }
   results: string[];
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(this.showMap);
@@ -39,6 +42,20 @@ export class GroundToAirportComponent implements OnInit {
         directionsDisplay.setDirections(result);
       }
     });
+
+    this.http.get('http://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=33.5435,-84.5124&destinations=33.640411,-84.419853&key=AIzaSyAfKPDvuqOVy6aY9giNWn6TXjcch-2DCBk')
+      .subscribe(data => {
+        console.log(data);
+      }, err => {
+        console.log(err);
+      });
+      // .map((response: Response) => {
+      //   // console.log(response);
+      //   // const things = response.json();
+      //   // console.log(things);
+      // })
+      // .catch((error: Response) => Observable.throw(error.json()));
+
     // this.http.get('/api/items').subscribe(data => {
     //   // Read the result field from the JSON response.
     //   this.results = data['results'];

@@ -76,6 +76,7 @@ const appRoutes: Routes = [{
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService],
