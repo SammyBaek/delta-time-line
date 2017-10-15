@@ -16,6 +16,7 @@ import { AirportToGroundComponent } from './airport-to-ground/airport-to-ground.
 import { BoardingComponent } from './boarding/boarding.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PreviewComponent } from "./preview/preview.component";
 
 
 
@@ -31,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AirportToGroundComponent,
     BoardingComponent,
     ParkingInfoComponent,
-    CheckInComponent
+    CheckInComponent,
+    PreviewComponent
   ],
   imports: [
     ReactiveFormsModule,
